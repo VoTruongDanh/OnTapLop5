@@ -63,7 +63,6 @@ export function TestResults() {
   if (!testResult) {
     return (
       <div className="text-center py-12">
-        <div className="text-4xl mb-4">📊</div>
         <p className="text-gray-600">Không tìm thấy kết quả kiểm tra</p>
         <Button className="mt-4" onClick={() => navigate('/test')}>
           Quay lại
@@ -110,9 +109,6 @@ export function TestResults() {
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Header */}
       <div className="text-center">
-        <div className="text-6xl mb-4">
-          {testResult.score >= 8 ? '🎉' : testResult.score >= 5 ? '👍' : '💪'}
-        </div>
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Kết quả kiểm tra</h1>
         <p className="text-gray-600">Học kỳ {testResult.semester}</p>
       </div>
@@ -162,12 +158,9 @@ export function TestResults() {
       {/* Time spent */}
       <Card>
         <CardContent>
-          <div className="flex items-center gap-4">
-            <div className="text-3xl">⏱️</div>
-            <div>
-              <div className="font-bold text-gray-800">Thời gian làm bài</div>
-              <div className="text-gray-600">{formatTime(testResult.timeSpent)}</div>
-            </div>
+          <div>
+            <div className="font-bold text-gray-800">Thời gian làm bài</div>
+            <div className="text-gray-600">{formatTime(testResult.timeSpent)}</div>
           </div>
         </CardContent>
       </Card>
@@ -175,12 +168,9 @@ export function TestResults() {
       {/* Submission time */}
       <Card>
         <CardContent>
-          <div className="flex items-center gap-4">
-            <div className="text-3xl">📅</div>
-            <div>
-              <div className="font-bold text-gray-800">Thời gian nộp bài</div>
-              <div className="text-gray-600">{formatDateTime(testResult.date)}</div>
-            </div>
+          <div>
+            <div className="font-bold text-gray-800">Thời gian nộp bài</div>
+            <div className="text-gray-600">{formatDateTime(testResult.date)}</div>
           </div>
         </CardContent>
       </Card>
@@ -188,7 +178,7 @@ export function TestResults() {
       {/* Topics covered */}
       <Card>
         <CardContent>
-          <h3 className="font-bold text-gray-800 mb-3">📚 Chủ đề đã kiểm tra</h3>
+          <h3 className="font-bold text-gray-800 mb-3">Chủ đề đã kiểm tra</h3>
           <div className="flex flex-wrap gap-2">
             {testResult.topics.map((topic) => (
               <span
@@ -206,14 +196,11 @@ export function TestResults() {
       {needsReview && recommendations.length > 0 && (
         <Card className="bg-orange-50 border border-orange-200">
           <CardContent>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="text-3xl">📖</div>
-              <div>
-                <h3 className="font-bold text-orange-800">Đề xuất ôn tập</h3>
-                <p className="text-orange-700 text-sm">
-                  Điểm dưới 5, bạn nên ôn lại các chủ đề sau:
-                </p>
-              </div>
+            <div className="mb-4">
+              <h3 className="font-bold text-orange-800">Đề xuất ôn tập</h3>
+              <p className="text-orange-700 text-sm">
+                Điểm dưới 5, bạn nên ôn lại các chủ đề sau:
+              </p>
             </div>
             <div className="space-y-3">
               {recommendations.map((rec) => (
@@ -262,7 +249,7 @@ export function TestResults() {
           variant="outline"
           onClick={() => setShowDetails(!showDetails)}
         >
-          {showDetails ? '🔼 Ẩn chi tiết' : '🔽 Xem chi tiết đáp án'}
+          {showDetails ? 'Ẩn chi tiết' : 'Xem chi tiết đáp án'}
         </Button>
       </div>
 
@@ -270,7 +257,7 @@ export function TestResults() {
       {showDetails && (
         <Card>
           <CardContent>
-            <h3 className="font-bold text-gray-800 mb-4">📝 Chi tiết đáp án</h3>
+            <h3 className="font-bold text-gray-800 mb-4">Chi tiết đáp án</h3>
             <div className="space-y-4">
               {testResult.answers.map((answer, index) => {
                 const question = questions.find((q) => q.id === answer.questionId);

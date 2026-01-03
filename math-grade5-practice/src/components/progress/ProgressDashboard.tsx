@@ -136,7 +136,7 @@ function RecentActivity({ testHistory, practiceHistory }: RecentActivityProps) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>📋 Hoạt động gần đây</CardTitle>
+          <CardTitle>Hoạt động gần đây</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-gray-500 text-center py-4">
@@ -155,7 +155,7 @@ function RecentActivity({ testHistory, practiceHistory }: RecentActivityProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>📋 Hoạt động gần đây</CardTitle>
+        <CardTitle>Hoạt động gần đây</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
@@ -164,9 +164,6 @@ function RecentActivity({ testHistory, practiceHistory }: RecentActivityProps) {
               key={index}
               className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
             >
-              <div className="text-2xl">
-                {activity.type === 'test' ? '📊' : '📝'}
-              </div>
               <div className="flex-1">
                 <p className="font-medium text-gray-800">
                   {activity.type === 'test' 
@@ -202,14 +199,11 @@ function WeakTopics({ weakTopics }: WeakTopicsProps) {
   if (weakTopics.length === 0) {
     return (
       <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200">
-        <div className="flex items-center gap-4">
-          <div className="text-3xl">🎉</div>
-          <div>
-            <h3 className="font-bold text-green-800">Tuyệt vời!</h3>
-            <p className="text-green-700 text-sm">
-              Bạn đang làm tốt ở tất cả các chủ đề. Hãy tiếp tục phát huy!
-            </p>
-          </div>
+        <div>
+          <h3 className="font-bold text-green-800">Tuyệt vời!</h3>
+          <p className="text-green-700 text-sm">
+            Bạn đang làm tốt ở tất cả các chủ đề. Hãy tiếp tục phát huy!
+          </p>
         </div>
         <div className="mt-4">
           <Link to="/progress/weak-areas">
@@ -224,8 +218,8 @@ function WeakTopics({ weakTopics }: WeakTopicsProps) {
     <Card className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200">
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle className="text-orange-800 flex items-center gap-2">
-            <span>⚠️</span> Chủ đề cần ôn tập
+          <CardTitle className="text-orange-800">
+            Chủ đề cần ôn tập
           </CardTitle>
           <Link to="/progress/weak-areas">
             <Button variant="outline" size="sm">Xem chi tiết</Button>
@@ -285,7 +279,6 @@ export function ProgressDashboard() {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <div className="text-4xl mb-4">⏳</div>
           <p className="text-gray-600">Đang tải dữ liệu...</p>
         </div>
       </div>
@@ -295,7 +288,6 @@ export function ProgressDashboard() {
   if (!progress) {
     return (
       <div className="text-center py-12">
-        <div className="text-6xl mb-4">📊</div>
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Chưa có dữ liệu</h2>
         <p className="text-gray-600 mb-6">Hãy bắt đầu luyện tập để xem tiến độ của bạn!</p>
         <Link to="/practice">
@@ -330,7 +322,7 @@ export function ProgressDashboard() {
       {/* Header */}
       <section className="text-center">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
-          📈 Tiến độ học tập
+          Tiến độ học tập
         </h1>
         <p className="text-gray-600">
           Theo dõi kết quả và cải thiện kỹ năng của bạn
@@ -339,7 +331,7 @@ export function ProgressDashboard() {
 
       {/* Stats Overview */}
       <section>
-        <h2 className="text-xl font-bold text-gray-800 mb-4">📊 Tổng quan</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">Tổng quan</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <StatCard
             icon="📝"
@@ -374,7 +366,7 @@ export function ProgressDashboard() {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <ProgressChart
           data={chartData}
-          title="📈 Điểm các bài kiểm tra gần đây"
+          title="Điểm các bài kiểm tra gần đây"
         />
         <WeakTopics weakTopics={progress.weakTopics} />
       </section>
@@ -390,22 +382,22 @@ export function ProgressDashboard() {
       {/* Quick Actions */}
       <section className="flex flex-wrap gap-4 justify-center">
         <Link to="/progress/weak-areas">
-          <Button variant="primary" size="lg" icon={<span>🎯</span>}>
+          <Button variant="primary" size="lg">
             Phân tích điểm yếu
           </Button>
         </Link>
         <Link to="/practice">
-          <Button variant="outline" size="lg" icon={<span>📝</span>}>
+          <Button variant="outline" size="lg">
             Luyện tập
           </Button>
         </Link>
         <Link to="/test">
-          <Button variant="outline" size="lg" icon={<span>📊</span>}>
+          <Button variant="outline" size="lg">
             Làm bài kiểm tra
           </Button>
         </Link>
         <Link to="/">
-          <Button variant="secondary" size="lg" icon={<span>🏠</span>}>
+          <Button variant="secondary" size="lg">
             Trang chủ
           </Button>
         </Link>

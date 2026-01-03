@@ -7,10 +7,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Trang chủ', href: '/', icon: '🏠' },
-  { label: 'Luyện tập', href: '/practice', icon: '📝' },
-  { label: 'Kiểm tra', href: '/test', icon: '📊' },
-  { label: 'Tiến độ', href: '/progress', icon: '📈' },
+  { label: 'Trang chủ', href: '/', icon: '' },
+  { label: 'Luyện tập', href: '/practice', icon: '' },
+  { label: 'Kiểm tra', href: '/test', icon: '' },
+  { label: 'Tiến độ', href: '/progress', icon: '' },
 ];
 
 export function Header() {
@@ -22,7 +22,6 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 font-bold text-xl">
-            <span className="text-2xl">🧮</span>
             <span className="hidden sm:inline">Toán Lớp 5</span>
           </a>
 
@@ -34,7 +33,6 @@ export function Header() {
                 href={item.href}
                 className="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-colors"
               >
-                <span>{item.icon}</span>
                 <span>{item.label}</span>
               </a>
             ))}
@@ -66,7 +64,6 @@ export function Header() {
                 className="flex items-center gap-2 px-3 py-3 rounded-lg hover:bg-white/20 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span>{item.icon}</span>
                 <span>{item.label}</span>
               </a>
             ))}

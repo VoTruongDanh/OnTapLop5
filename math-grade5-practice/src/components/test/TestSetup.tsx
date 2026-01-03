@@ -128,14 +128,11 @@ export function TestSetup() {
         <Card className="bg-green-50 border border-green-200">
           <CardContent>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="text-2xl">👤</div>
-                <div>
-                  <div className="font-bold text-green-800">{studentInfo.name}</div>
-                  {studentInfo.class && (
-                    <div className="text-sm text-green-600">Lớp: {studentInfo.class}</div>
-                  )}
-                </div>
+              <div>
+                <div className="font-bold text-green-800">{studentInfo.name}</div>
+                {studentInfo.class && (
+                  <div className="text-sm text-green-600">Lớp: {studentInfo.class}</div>
+                )}
               </div>
               <Button variant="outline" size="sm" onClick={handleChangeStudent}>
                 Đổi học sinh
@@ -149,14 +146,11 @@ export function TestSetup() {
       {activeSession && (
         <Card className="bg-orange-50 border border-orange-200">
           <CardContent>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="text-3xl">⚠️</div>
-              <div>
-                <h3 className="font-bold text-orange-800">Bài kiểm tra đang làm dở</h3>
-                <p className="text-orange-700 text-sm">
-                  Bạn có một bài kiểm tra chưa hoàn thành.
-                </p>
-              </div>
+            <div className="mb-4">
+              <h3 className="font-bold text-orange-800">Bài kiểm tra đang làm dở</h3>
+              <p className="text-orange-700 text-sm">
+                Bạn có một bài kiểm tra chưa hoàn thành.
+              </p>
             </div>
             
             <div className="bg-white/50 p-3 rounded-lg mb-4 text-sm">
@@ -180,10 +174,10 @@ export function TestSetup() {
             
             <div className="flex gap-3">
               <Button onClick={handleContinueActiveTest}>
-                ✅ Tiếp tục bài cũ
+                Tiếp tục bài cũ
               </Button>
               <Button variant="outline" onClick={handleStartNewTest}>
-                🆕 Tạo bài mới
+                Tạo bài mới
               </Button>
             </div>
           </CardContent>
@@ -192,7 +186,7 @@ export function TestSetup() {
 
       {/* Header */}
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">📝 Kiểm tra</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Kiểm tra</h1>
         <p className="text-gray-600">Chọn học kỳ, chủ đề và số câu hỏi để bắt đầu bài kiểm tra</p>
       </div>
 
@@ -210,7 +204,6 @@ export function TestSetup() {
                 selectedSemester === 1 ? 'ring-2 ring-blue-500 ring-offset-2' : ''
               }`}
             >
-              <div className="text-4xl mb-3">📗</div>
               <h3 className="font-bold text-lg text-gray-800 mb-2">Học kỳ 1</h3>
               <p className="text-sm text-gray-600">
                 Số tự nhiên, Phân số, Số thập phân, Hình học cơ bản
@@ -230,7 +223,6 @@ export function TestSetup() {
                 selectedSemester === 2 ? 'ring-2 ring-blue-500 ring-offset-2' : ''
               }`}
             >
-              <div className="text-4xl mb-3">📘</div>
               <h3 className="font-bold text-lg text-gray-800 mb-2">Học kỳ 2</h3>
               <p className="text-sm text-gray-600">
                 Số thập phân, Tỉ số phần trăm, Hình học nâng cao, Ôn tập
@@ -325,14 +317,11 @@ export function TestSetup() {
       {canStartTest && (
         <Card className="bg-blue-50 border border-blue-200">
           <CardContent>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="text-3xl">📋</div>
-              <div>
-                <h3 className="font-bold text-blue-800">Tóm tắt bài kiểm tra</h3>
-                <p className="text-blue-700">
-                  Học kỳ {selectedSemester} • {selectedTopics.length} chủ đề • {questionCount} câu hỏi
-                </p>
-              </div>
+            <div className="mb-4">
+              <h3 className="font-bold text-blue-800">Tóm tắt bài kiểm tra</h3>
+              <p className="text-blue-700">
+                Học kỳ {selectedSemester} • {selectedTopics.length} chủ đề • {questionCount} câu hỏi
+              </p>
             </div>
             <div className="text-sm text-blue-600 mb-4">
               <strong>Chủ đề:</strong> {selectedTopics.map(getTopicDisplayName).join(', ')}

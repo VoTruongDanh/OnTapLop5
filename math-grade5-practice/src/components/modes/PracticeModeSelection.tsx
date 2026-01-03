@@ -57,7 +57,7 @@ export function PracticeModeSelection() {
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">📝 Chọn chế độ luyện tập</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Chọn chế độ luyện tập</h1>
         <p className="text-gray-600">Chọn chế độ và học kỳ để bắt đầu luyện tập</p>
       </div>
 
@@ -117,7 +117,6 @@ export function PracticeModeSelection() {
                   : ''
               }`}
             >
-              <div className="text-4xl mb-3">📗</div>
               <h3 className="font-bold text-lg text-gray-800 mb-2">Học kỳ 1</h3>
               <p className="text-sm text-gray-600">
                 Số tự nhiên, Phân số, Số thập phân, Hình học cơ bản
@@ -139,7 +138,6 @@ export function PracticeModeSelection() {
                   : ''
               }`}
             >
-              <div className="text-4xl mb-3">📘</div>
               <h3 className="font-bold text-lg text-gray-800 mb-2">Học kỳ 2</h3>
               <p className="text-sm text-gray-600">
                 Số thập phân, Tỉ số phần trăm, Hình học nâng cao, Ôn tập
@@ -169,20 +167,17 @@ export function PracticeModeSelection() {
       {/* Selection Summary */}
       {(selectedMode || selectedSemester) && (
         <Card className="bg-blue-50 border border-blue-200">
-          <div className="flex items-center gap-4">
-            <div className="text-2xl">📋</div>
-            <div>
-              <h3 className="font-bold text-blue-800">Lựa chọn của bạn:</h3>
-              <p className="text-blue-700">
-                {selectedMode
-                  ? `Chế độ: ${practiceModes.find((m) => m.id === selectedMode)?.title}`
-                  : 'Chưa chọn chế độ'}
-                {' • '}
-                {selectedSemester
-                  ? `Học kỳ ${selectedSemester}`
-                  : 'Chưa chọn học kỳ'}
-              </p>
-            </div>
+          <div>
+            <h3 className="font-bold text-blue-800">Lựa chọn của bạn:</h3>
+            <p className="text-blue-700">
+              {selectedMode
+                ? `Chế độ: ${practiceModes.find((m) => m.id === selectedMode)?.title}`
+                : 'Chưa chọn chế độ'}
+              {' • '}
+              {selectedSemester
+                ? `Học kỳ ${selectedSemester}`
+                : 'Chưa chọn học kỳ'}
+            </p>
           </div>
         </Card>
       )}

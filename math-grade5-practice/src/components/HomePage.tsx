@@ -52,13 +52,13 @@ const quickActions: QuickAction[] = [
   {
     title: 'Kiểm tra',
     description: 'Làm bài kiểm tra và xem điểm',
-    icon: '📊',
+    icon: '',
     href: '/test',
   },
   {
     title: 'Tiến độ',
     description: 'Xem thống kê học tập',
-    icon: '📈',
+    icon: '',
     href: '/progress',
   },
 ];
@@ -69,7 +69,7 @@ export function HomePage() {
       {/* Hero Section */}
       <section className="text-center py-8">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          🧮 Ôn tập Toán Lớp 5
+          Ôn tập Toán Lớp 5
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Chào mừng bạn đến với website ôn tập Toán lớp 5! 
@@ -79,8 +79,8 @@ export function HomePage() {
 
       {/* Practice Modes Grid */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-          <span>📝</span> Chế độ luyện tập
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          Chế độ luyện tập
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {practiceModes.map((mode) => (
@@ -105,14 +105,13 @@ export function HomePage() {
 
       {/* Quick Actions */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-          <span>🚀</span> Truy cập nhanh
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          Truy cập nhanh
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {quickActions.map((action) => (
             <Link key={action.href} to={action.href} className="block">
               <Card hoverable className="flex items-center gap-4">
-                <div className="text-3xl">{action.icon}</div>
                 <div>
                   <h3 className="font-bold text-gray-800">{action.title}</h3>
                   <p className="text-sm text-gray-500">{action.description}</p>
@@ -125,13 +124,12 @@ export function HomePage() {
 
       {/* Semester Selection */}
       <section className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-          <span>📚</span> Chọn học kỳ
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          Chọn học kỳ
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link to="/practice?semester=1">
             <Card hoverable className="text-center">
-              <div className="text-4xl mb-3">📗</div>
               <h3 className="font-bold text-lg text-gray-800 mb-2">Học kỳ 1</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Số tự nhiên, Phân số, Số thập phân, Hình học cơ bản
@@ -143,7 +141,6 @@ export function HomePage() {
           </Link>
           <Link to="/practice?semester=2">
             <Card hoverable className="text-center">
-              <div className="text-4xl mb-3">📘</div>
               <h3 className="font-bold text-lg text-gray-800 mb-2">Học kỳ 2</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Số thập phân, Tỉ số phần trăm, Hình học nâng cao, Ôn tập
@@ -159,17 +156,14 @@ export function HomePage() {
       {/* Tips Section */}
       <section>
         <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200">
-          <div className="flex items-start gap-4">
-            <div className="text-3xl">💡</div>
-            <div>
-              <h3 className="font-bold text-green-800 mb-2">Mẹo học tập</h3>
+          <div>
+            <h3 className="font-bold text-green-800 mb-2">Mẹo học tập</h3>
               <ul className="text-green-700 text-sm space-y-1">
                 <li>• Luyện tập đều đặn mỗi ngày 15-30 phút</li>
                 <li>• Bắt đầu từ bài dễ, tăng dần độ khó</li>
                 <li>• Đọc kỹ giải thích khi làm sai</li>
                 <li>• Sử dụng gợi ý khi cần thiết</li>
               </ul>
-            </div>
           </div>
         </Card>
       </section>
