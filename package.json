@@ -1,0 +1,9 @@
+{
+  "name": "ontaplop5-root",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "cd math-grade5-practice && npm install",
+    "build": "cd math-grade5-practice && npm run build",
+    "start": "cd math-grade5-practice && npm run preview -- --host 0.0.0.0 --port ${PORT:-3000}"
+  }
+}
