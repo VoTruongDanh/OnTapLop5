@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface NavItem {
   label: string;
@@ -21,20 +22,20 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 font-bold text-xl">
+          <Link to="/" className="flex items-center gap-2 font-bold text-xl">
             <span className="hidden sm:inline">Toán Lớp 5</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
                 className="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-colors"
               >
                 <span>{item.label}</span>
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -58,14 +59,14 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden pb-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
                 className="flex items-center gap-2 px-3 py-3 rounded-lg hover:bg-white/20 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span>{item.label}</span>
-              </a>
+              </Link>
             ))}
           </nav>
         )}
