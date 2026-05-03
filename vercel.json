@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd math-grade5-practice && npm install && npm run build",
+  "outputDirectory": "math-grade5-practice/dist",
+  "installCommand": "npm install",
+  "env": {
+    "VITE_REACT_APP": "production"
+  }
+}
