@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { MainLayout } from './components/layout';
 import { HomePage } from './components/HomePage';
 import { PracticeModeSelection, TuDuyMode, TinhNhanhMode, ToanGiaiMode, ToanCoBanMode } from './components/modes';
@@ -6,9 +7,26 @@ import { TestSetup, TestTaking, TestResults } from './components/test';
 import { ProgressDashboard, WeakAreaAnalysis } from './components/progress';
 import { AdminDashboard } from './components/admin';
 
+function RouteRecovery() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const redirectedRoute = searchParams.get('__route');
+
+    if (redirectedRoute) {
+      navigate(redirectedRoute, { replace: true });
+    }
+  }, [location.search, navigate]);
+
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
+      <RouteRecovery />
       <MainLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
